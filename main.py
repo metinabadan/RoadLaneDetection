@@ -59,7 +59,8 @@ def process(image):
     croppedImage = requiredPartOfImage(cannyImage,np.array([verticesOfRequiredPartOfImage],np.int32))
     #showImage("cropped",croppedImage)
 
-    lines = cv2.HoughLinesP(croppedImage,2,np.pi/60,160,np.array([]),40,100)
+    #lines = cv2.HoughLinesP(croppedImage,2,np.pi/60,160,np.array([]),40,100)
+    lines = cv2.HoughLinesP(croppedImage, 2, np.pi / 180, 200, np.array([]), 40, 100)
 
     imageWithLines = drawLines(image,lines)
 
